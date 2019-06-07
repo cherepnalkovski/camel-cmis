@@ -1,0 +1,15 @@
+com\armedia\explore\camelcmis\DeleteFolderQueue.class
+com\armedia\explore\camelcmis\ArkCaseCMISEndpoint.class
+com\armedia\explore\camelcmis\Main.class
+org\apache\camel\component\cmis\CamelCMISConstants.class
+com\armedia\explore\camelcmis\ArkCaseSessionFacadeFactory.class
+com\armedia\explore\camelcmis\DeleteFolderRoute.class
+org\apache\camel\component\cmis\CMISProducer$1.class
+com\armedia\explore\camelcmis\ArkcaseCMISComponent.class
+com\armedia\explore\camelcmis\CmisBean.class
+org\apache\camel\component\cmis\CamelCMISActions.class
+org\apache\camel\component\cmis\ArkCaseCMISSessionFacade.class
+com\armedia\explore\camelcmis\CreateFolderQueue.class
+com\armedia\explore\camelcmis\Item.class
+org\apache\camel\component\cmis\CMISProducer.class
+com\armedia\explore\camelcmis\CreateFolderRoute.class
