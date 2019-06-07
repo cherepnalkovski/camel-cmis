@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1c5bb533-13fe-4d53-9e5f-d845c230a23f" name="Default Changelist" comment="" />
+    <list default="true" id="1c5bb533-13fe-4d53-9e5f-d845c230a23f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/apache/camel/component/cmis/ArkCaseCMISSessionFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/apache/camel/component/cmis/ArkCaseCMISSessionFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/apache/camel/component/cmis/ArkCaseCMISSessionFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/apache/camel/component/cmis/ArkCaseCMISSessionFacade.class" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -12,30 +17,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/camel/component/cmis/CMISProducer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1666">
-              <caret line="134" selection-start-line="134" selection-end-line="134" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="jar://$MAVEN_REPOSITORY$/org/apache/camel/camel-cmis/2.20.2/camel-cmis-2.20.2.jar!/org/apache/camel/component/cmis/CMISSessionFacade.class">
           <provider selected="true" editor-type-id="text-editor">
@@ -75,11 +56,41 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/CreateFolderRoute.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="54" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="54" />
+            <state relative-caret-position="238">
+              <caret line="14" column="29" lean-forward="true" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/ArkCaseSessionFacadeFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="27" selection-start-line="27" selection-end-line="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/camel/component/cmis/ArkCaseCMISSessionFacade.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="39" column="98" selection-start-line="39" selection-start-column="98" selection-end-line="39" selection-end-column="98" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -125,6 +136,9 @@
       <find>ann-acm</find>
     </findStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -137,12 +151,12 @@
         <option value="$PROJECT_DIR$/src/main/java/org/apache/camel/component/cmis/CMISProducer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/ArkcaseCMISComponent.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/ArkCaseCMISEndpoint.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/apache/camel/component/cmis/ArkCaseCMISSessionFacade.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/DeleteFolderQueue.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/CmisBean.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/CreateFolderRoute.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/apache/camel/component/cmis/ArkCaseCMISSessionFacade.java" />
       </list>
     </option>
   </component>
@@ -165,6 +179,7 @@
     <option name="width" value="1400" />
     <option name="height" value="820" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -323,15 +338,16 @@
       <updated>1559812198896</updated>
       <workItem from="1559812202332" duration="9956000" />
       <workItem from="1559827819123" duration="5489000" />
-      <workItem from="1559896896683" duration="368000" />
+      <workItem from="1559896896683" duration="1640000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15813000" />
+    <option name="totallyTimeSpent" value="17085000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1592" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Image Layers" order="0" />
       <window_info id="UI Designer" order="1" />
@@ -339,9 +355,9 @@
       <window_info id="Capture Tool" order="3" />
       <window_info id="Web" order="4" side_tool="true" />
       <window_info id="Designer" order="5" />
-      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.25266525" />
+      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.25266525" />
       <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="0" visible="true" weight="0.329718" />
+      <window_info anchor="bottom" id="Terminal" order="0" visible="true" weight="0.329718" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="2" weight="0.329718" />
       <window_info anchor="bottom" id="Java Enterprise" order="3" weight="0.329718" />
@@ -350,8 +366,8 @@
       <window_info anchor="bottom" id="Spring" order="6" />
       <window_info anchor="bottom" id="Message" order="7" />
       <window_info anchor="bottom" id="Find" order="8" weight="0.329718" />
-      <window_info anchor="bottom" id="Run" order="9" weight="0.4284165" />
-      <window_info anchor="bottom" id="Debug" order="10" visible="true" weight="0.38394794" />
+      <window_info anchor="bottom" id="Run" order="9" weight="0.5824295" />
+      <window_info anchor="bottom" id="Debug" order="10" weight="0.38394794" />
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="13" />
@@ -553,6 +569,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#388#389#0" expanded="true" />
+            <element signature="e#433#434#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -560,13 +580,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="32" column="49" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/ArkCaseSessionFacadeFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
         </state>
       </provider>
     </entry>
@@ -595,6 +608,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="31" column="37" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -608,13 +624,6 @@
     <entry file="file://$USER_HOME$/Desktop/camel-cmis/src/main/java/org/apache/camel/component/cmis/ArkCaseCMISSessionFacade.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-408" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/camel/component/cmis/ArkCaseCMISSessionFacade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="45" selection-start-line="45" selection-end-line="45" />
-        </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/chemistry/opencmis/chemistry-opencmis-client-impl/1.1.0/chemistry-opencmis-client-impl-1.1.0.jar!/org/apache/chemistry/opencmis/client/runtime/OperationContextImpl.class">
@@ -734,13 +743,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/CreateFolderRoute.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/ArkCaseSessionFacadeFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="54" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="54" />
+        <state relative-caret-position="306">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/camel/component/cmis/ArkCaseCMISSessionFacade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="39" column="98" selection-start-line="39" selection-start-column="98" selection-end-line="39" selection-end-column="98" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/CreateFolderRoute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="29" lean-forward="true" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
     </entry>

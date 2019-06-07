@@ -1,5 +1,6 @@
 package org.apache.camel.component.cmis;
 
+import org.apache.chemistry.opencmis.client.bindings.CmisBindingFactory;
 import org.apache.chemistry.opencmis.client.bindings.spi.StandardAuthenticationProvider;
 import org.apache.chemistry.opencmis.commons.SessionParameter;
 import org.apache.chemistry.opencmis.commons.enums.BindingType;
@@ -36,7 +37,7 @@ public class ArkCaseCMISSessionFacade extends CMISSessionFacade
         parameter.put(SessionParameter.USER, "admin");
         parameter.put(SessionParameter.PASSWORD, "admin");
         parameter.put(SessionParameter.HEADER + ".0", "X-Alfresco-Remote-User:" + remoteUser);
-        parameter.put(SessionParameter.AUTHENTICATION_PROVIDER_CLASS, StandardAuthenticationProvider.class.getName());
+        parameter.put(SessionParameter.AUTHENTICATION_PROVIDER_CLASS, CmisBindingFactory.NTLM_AUTHENTICATION_PROVIDER);
         parameter.put(SessionParameter.AUTH_HTTP_BASIC, "true");
         try
         {
