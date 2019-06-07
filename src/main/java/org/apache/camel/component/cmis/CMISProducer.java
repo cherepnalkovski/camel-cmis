@@ -16,11 +16,7 @@
  */
 package org.apache.camel.component.cmis;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Message;
@@ -34,6 +30,8 @@ import org.apache.chemistry.opencmis.client.api.Document;
 import org.apache.chemistry.opencmis.client.api.Folder;
 import org.apache.chemistry.opencmis.commons.PropertyIds;
 import org.apache.chemistry.opencmis.commons.data.ContentStream;
+import org.apache.chemistry.opencmis.commons.enums.Action;
+import org.apache.chemistry.opencmis.commons.enums.UnfileObject;
 import org.apache.chemistry.opencmis.commons.enums.VersioningState;
 import org.apache.chemistry.opencmis.commons.exceptions.CmisObjectNotFoundException;
 
@@ -71,8 +69,13 @@ public class CMISProducer extends DefaultProducer {
                 exchange.getOut().setBody(cmisObject.getId());
                 break;
             case DELETE_FOLDER:
+                deleteFolder(exchange);
                 break;
-            case DELETE_FILE:
+            case DELETE_DOCUMENT:
+                deleteDocument(exchange);
+                break;
+            case DELETE_DOCUMENT_VERSION:
+                deleteDocumentVersion(exchange);
                 break;
 
                 default:
@@ -128,9 +131,68 @@ public class CMISProducer extends DefaultProducer {
         }
     }
 
+    private List<String> deleteFolder(Exchange exchange) throws Exception {
+        validateRequiredHeader(exchange, CamelCMISConstants.CMIS_FOLDER_PATH);
+
+        Message message = exchange.getIn();
+
+        String path = message.getHeader(CamelCMISConstants.CMIS_FOLDER_PATH, String.class);
+        Folder folder = getFolderOnPath(exchange, path);
+        return folder.deleteTree(true, UnfileObject.DELETE, true);
+    }
+
+    private void deleteDocument(Exchange exchange) throws Exception {
+        validateRequiredHeader(exchange, PropertyIds.PATH);
+
+        Message message = exchange.getIn();
+
+        String path = message.getHeader(PropertyIds.PATH, String.class);
+        Document document = getDocumentOnPath(exchange, path);
+
+        document.deleteAllVersions();
+    }
+
+    private void deleteDocumentVersion(Exchange exchange) throws Exception
+    {
+        validateRequiredHeader(exchange, PropertyIds.PATH);
+        validateRequiredHeader(exchange, PropertyIds.VERSION_LABEL);
+
+        Message message = exchange.getIn();
+
+        String path = message.getHeader(PropertyIds.PATH, String.class);
+        // Document version, should be send from ArkCase
+        String versionLabel = message.getHeader(PropertyIds.VERSION_LABEL, String.class);
+        Document document = getDocumentOnPath(exchange, path);
+        List<Document> versions = document.getAllVersions();
+
+        if (document.getAllowableActions().getAllowableActions().contains(Action.CAN_DELETE_OBJECT)) { //// You can delete
+            for(int i=0;i<versions.size();i++)
+            {
+                Document version = versions.get(i);
+
+                if(versionLabel.equals(version.getVersionLabel())){
+                    version.delete(false);
+                }
+            }
+        }
+        else
+        {
+            System.out.println("I can't ");
+        }
+
+    }
+
     private Folder getFolderOnPath(Exchange exchange, String path) throws Exception {
         try {
             return (Folder) getSessionFacade().getObjectByPath(path);
+        } catch (CmisObjectNotFoundException e) {
+            throw new RuntimeExchangeException("Path not found " + path, exchange, e);
+        }
+    }
+
+    private Document getDocumentOnPath(Exchange exchange, String path) throws Exception {
+        try {
+            return (Document) getSessionFacade().getObjectByPath(path);
         } catch (CmisObjectNotFoundException e) {
             throw new RuntimeExchangeException("Path not found " + path, exchange, e);
         }

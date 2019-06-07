@@ -1,5 +1,6 @@
-package com.armedia.explore.camelcmis;
+package com.armedia.explore.camelcmis.flow.queue;
 
+import com.armedia.explore.camelcmis.Item;
 import org.apache.camel.Produce;
 import org.apache.camel.ProducerTemplate;
 
