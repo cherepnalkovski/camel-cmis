@@ -4,7 +4,10 @@ public class Item
 {
     private String fileName;
     private String folderName;
-    private String path;
+    private String folderPath;
+    private String destinationPath;
+    private String sourcePath;
+    private String documentPath;
     private String version;
 
     public String getFolderName() {
@@ -15,12 +18,12 @@ public class Item
         this.folderName = folderName;
     }
 
-    public String getPath() {
-        return path;
+    public String getFolderPath() {
+        return folderPath;
     }
 
-    public void setPath(String path) {
-        this.path = path;
+    public void setFolderPath(String folderPath) {
+        this.folderPath = folderPath;
     }
 
     public String getFileName() {
@@ -37,5 +40,29 @@ public class Item
 
     public void setVersion(String version) {
         this.version = version;
+    }
+
+    public String getDocumentPath() {
+        return documentPath;
+    }
+
+    public void setDocumentPath(String documentPath) {
+        this.documentPath = documentPath;
+    }
+
+    public String getDestinationPath() {
+        return destinationPath;
+    }
+
+    public void setDestinationPath(String destinationPath) {
+        this.destinationPath = destinationPath;
+    }
+
+    public String getSourcePath() {
+        return sourcePath;
+    }
+
+    public void setSourcePath(String sourcePath) {
+        this.sourcePath = sourcePath;
     }
 }

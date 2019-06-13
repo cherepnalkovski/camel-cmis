@@ -1,13 +1,7 @@
 package com.armedia.explore.camelcmis;
 
-import com.armedia.explore.camelcmis.flow.queue.CreateFolderQueue;
-import com.armedia.explore.camelcmis.flow.queue.DeleteDocumentQueue;
-import com.armedia.explore.camelcmis.flow.queue.DeleteDocumentVersionQueue;
-import com.armedia.explore.camelcmis.flow.route.CreateFolderRoute;
-import com.armedia.explore.camelcmis.flow.queue.DeleteFolderQueue;
-import com.armedia.explore.camelcmis.flow.route.DeleteDocumentRoute;
-import com.armedia.explore.camelcmis.flow.route.DeleteDocumentVersionRoute;
-import com.armedia.explore.camelcmis.flow.route.DeleteFolderRoute;
+import com.armedia.explore.camelcmis.flow.queue.*;
+import com.armedia.explore.camelcmis.flow.route.*;
 import org.apache.camel.CamelContext;
 import org.apache.camel.ProducerTemplate;
 import org.apache.camel.impl.DefaultCamelContext;
@@ -19,11 +13,13 @@ public class Main {
 
         CamelContext context = init();
 
-    //    createFolder("Vladimir test", context);
+    //    createFolder("VladimirReflection", context);
 
-    //    deleteDocumentVersion(context);
+    //    deleteDocument(context);
 
-        deleteDocument(context);
+    //    copy(context);
+
+        deleteFolder(context);
 
     }
 
@@ -33,6 +29,7 @@ public class Main {
         camelContext.addRoutes(new DeleteFolderRoute());
         camelContext.addRoutes(new DeleteDocumentRoute());
         camelContext.addRoutes(new DeleteDocumentVersionRoute());
+        camelContext.addRoutes(new CopyDocumentRoute());
         camelContext.start();
 
         return camelContext;
@@ -46,7 +43,7 @@ public class Main {
         CreateFolderQueue createFolderQueue = new CreateFolderQueue(producerTemplate);
         Item item = new Item();
         item.setFolderName(name);
-        item.setPath("/User Homes/ann-acm");
+        item.setFolderPath("/User Homes/ann-acm");
         createFolderQueue.createFolder(item);
         System.out.println("FOLDER CREATED!!!!!");
     }
@@ -58,7 +55,7 @@ public class Main {
         DeleteFolderQueue deleteFolderQueue = new DeleteFolderQueue(producerTemplate);
 
         Item deleteFolder = new Item();
-        deleteFolder.setPath("/User Homes/ann-acm/Vladimirfd1ecf69-4a51-46d0-be21-988086124b82");
+        deleteFolder.setFolderPath("/User Homes/ann-acm/VladimirReflection");
 
         deleteFolderQueue.deleteFolder(deleteFolder);
         System.out.println("FOLDER DELETED!!!!!");
@@ -70,22 +67,22 @@ public class Main {
 
         DeleteDocumentQueue deleteDocumentQueue = new DeleteDocumentQueue(producerTemplate);
         Item document = new Item();
-        document.setPath("/User Homes/ann-acm/Documents/Test.xlsx");
+        document.setFolderPath("/User Homes/ann-acm/Documents/Test.xlsx");
 
         deleteDocumentQueue.deleteDocument(document);
         System.out.println("DOCUMENT DELETED!!!!!");
     }
 
-    // Can delete only the last version. Problem with deleting version < last
-    public static void deleteDocumentVersion(CamelContext camelContext) throws Exception {
+    public static void copy(CamelContext camelContext) throws Exception {
         ProducerTemplate producerTemplate = new DefaultProducerTemplate(camelContext);
         producerTemplate.start();
 
-        DeleteDocumentVersionQueue deleteDocumentVersionQueue = new DeleteDocumentVersionQueue(producerTemplate);
-        Item documentVersion = new Item();
-        documentVersion.setPath("/User Homes/ann-acm/Documents/Test.xlsx");
-        documentVersion.setVersion("3.0");
+        CopyDocumentQueue copyDocumentQueue = new CopyDocumentQueue(producerTemplate);
+        Item copyItem = new Item();
+        copyItem.setDestinationPath("/User Homes/ann-acm/VladimirCopy");
+        copyItem.setDocumentPath("/User Homes/ann-acm/Vladimir/Test.xlsx");
 
-        deleteDocumentVersionQueue.deleteDocumentVersion(documentVersion);
+        copyDocumentQueue.copyDocument(copyItem);
+
     }
 }

@@ -7,8 +7,6 @@ import org.apache.camel.component.cmis.CamelCMISActions;
 import org.apache.camel.component.cmis.CamelCMISConstants;
 import org.apache.chemistry.opencmis.commons.PropertyIds;
 
-import java.util.UUID;
-
 public class DeleteFolderRoute extends RouteBuilder
 {
     @Override
@@ -16,7 +14,7 @@ public class DeleteFolderRoute extends RouteBuilder
         from("seda:deleteFolderQueue").setExchangePattern(ExchangePattern.InOut)
                 .process(exchange -> {
                     exchange.getIn().getHeaders().put(PropertyIds.OBJECT_TYPE_ID, "cmis:folder");
-                    exchange.getIn().getHeaders().put(CamelCMISConstants.CMIS_FOLDER_PATH, ((Item) exchange.getIn().getBody()).getPath());
+                    exchange.getIn().getHeaders().put(CamelCMISConstants.CMIS_FOLDER_PATH, ((Item) exchange.getIn().getBody()).getFolderPath());
                     exchange.getIn().getHeaders().put(CamelCMISConstants.CMIS_ACTION, CamelCMISActions.DELETE_FOLDER);
                 })
                 .to("arkcase-cmis://https://acm-arkcase/alfresco/api/-default-/public/cmis/versions/1.1/atom?username=admin&password=admin&remoteUser=ann-acm");

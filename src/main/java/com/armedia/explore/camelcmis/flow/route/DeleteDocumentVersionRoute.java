@@ -14,7 +14,7 @@ public class DeleteDocumentVersionRoute extends RouteBuilder
         from("seda:deleteDocumentVersionQueue").setExchangePattern(ExchangePattern.InOut)
                 .process(exchange -> {
                     exchange.getIn().getHeaders().put(PropertyIds.OBJECT_TYPE_ID, "cmis:document");
-                    exchange.getIn().getHeaders().put(PropertyIds.PATH, ((Item) exchange.getIn().getBody()).getPath());
+                    exchange.getIn().getHeaders().put(CamelCMISConstants.CMIS_DOCUMENT_PATH, ((Item) exchange.getIn().getBody()).getFolderPath());
                     exchange.getIn().getHeaders().put(PropertyIds.VERSION_LABEL, ((Item) exchange.getIn().getBody()).getVersion());
                     exchange.getIn().getHeaders().put(CamelCMISConstants.CMIS_ACTION, CamelCMISActions.DELETE_DOCUMENT_VERSION);
                 })

@@ -35,6 +35,8 @@ import org.apache.chemistry.opencmis.commons.enums.UnfileObject;
 import org.apache.chemistry.opencmis.commons.enums.VersioningState;
 import org.apache.chemistry.opencmis.commons.exceptions.CmisObjectNotFoundException;
 
+import javax.print.Doc;
+
 /**
  * The CMIS producer.
  */
@@ -56,31 +58,10 @@ public class CMISProducer extends DefaultProducer {
 
     public void process(Exchange exchange) throws Exception {
 
-        CamelCMISActions actions = exchange.getIn().getHeader(CamelCMISConstants.CMIS_ACTION, CamelCMISActions.class);
+        CamelCMISActions action = exchange.getIn().getHeader(CamelCMISConstants.CMIS_ACTION, CamelCMISActions.class);
 
-        switch (actions)
-        {
-            case CREATE:
-                CmisObject cmisObject = createNode(exchange);
-                log.debug("Created node with id: {}", cmisObject.getId());
+        this.getClass().getDeclaredMethod(action.getMethodName(), Exchange.class).invoke(this , exchange);
 
-                // copy the header of in message to the out message
-                exchange.getOut().copyFrom(exchange.getIn());
-                exchange.getOut().setBody(cmisObject.getId());
-                break;
-            case DELETE_FOLDER:
-                deleteFolder(exchange);
-                break;
-            case DELETE_DOCUMENT:
-                deleteDocument(exchange);
-                break;
-            case DELETE_DOCUMENT_VERSION:
-                deleteDocumentVersion(exchange);
-                break;
-
-                default:
-                    log.debug("UNSOPPORTED ACTION : " + actions.toString());
-        }
     }
 
     private Map<String, Object> filterTypeProperties(Map<String, Object> properties) throws Exception {
@@ -142,44 +123,52 @@ public class CMISProducer extends DefaultProducer {
     }
 
     private void deleteDocument(Exchange exchange) throws Exception {
-        validateRequiredHeader(exchange, PropertyIds.PATH);
+        validateRequiredHeader(exchange, CamelCMISConstants.CMIS_DOCUMENT_PATH);
 
         Message message = exchange.getIn();
 
-        String path = message.getHeader(PropertyIds.PATH, String.class);
+        String path = message.getHeader(CamelCMISConstants.CMIS_DOCUMENT_PATH, String.class);
         Document document = getDocumentOnPath(exchange, path);
 
         document.deleteAllVersions();
     }
 
-    private void deleteDocumentVersion(Exchange exchange) throws Exception
+    private void moveDocument(Exchange exchange)
     {
-        validateRequiredHeader(exchange, PropertyIds.PATH);
-        validateRequiredHeader(exchange, PropertyIds.VERSION_LABEL);
+        // not implemented yet
+    }
 
+    private void moveFolder(Exchange exchange)
+    {
+        // not implemented yet
+    }
+
+    private void copyDocument(Exchange exchange) throws Exception {
         Message message = exchange.getIn();
 
-        String path = message.getHeader(PropertyIds.PATH, String.class);
-        // Document version, should be send from ArkCase
-        String versionLabel = message.getHeader(PropertyIds.VERSION_LABEL, String.class);
-        Document document = getDocumentOnPath(exchange, path);
-        List<Document> versions = document.getAllVersions();
+        String destinationFolderPath = message.getHeader(CamelCMISConstants.CMIS_FOLDER_PATH, String.class);
+        String documentPath = message.getHeader(CamelCMISConstants.CMIS_DOCUMENT_PATH, String.class);
+        Folder destinationFolder = getFolderOnPath(exchange, destinationFolderPath);
 
-        if (document.getAllowableActions().getAllowableActions().contains(Action.CAN_DELETE_OBJECT)) { //// You can delete
-            for(int i=0;i<versions.size();i++)
-            {
-                Document version = versions.get(i);
+        Document document = getDocumentOnPath(exchange, documentPath);
 
-                if(versionLabel.equals(version.getVersionLabel())){
-                    version.delete(false);
-                }
-            }
-        }
-        else
-        {
-            System.out.println("I can't ");
-        }
+        document.copy(destinationFolder);
 
+    }
+
+    private void copyFolder(Exchange exchange)
+    {
+        // not implemented yet
+    }
+
+    private void renameFolder(Exchange exchange)
+    {
+        // not implemented yet
+    }
+
+    private void renameDocument(Exchange exchange)
+    {
+        // not implemented yet
     }
 
     private Folder getFolderOnPath(Exchange exchange, String path) throws Exception {
