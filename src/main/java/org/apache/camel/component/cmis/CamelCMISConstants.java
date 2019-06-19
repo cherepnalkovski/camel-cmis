@@ -21,6 +21,7 @@ public interface CamelCMISConstants {
     String CMIS_FOLDER = "cmis:folder";
     String CMIS_ACTION = "cmis:action";
     String CMIS_FOLDER_PATH = "CamelCMISFolderPath";
+    String CMIS_DESTIONATION_FOLDER_PATH = "CamelCMISDestinationFolderPath";
     String CMIS_DOCUMENT_PATH = "CamelCMISDocumentPath";
     String CAMEL_CMIS_RESULT_COUNT = "CamelCMISResultCount";
     String CAMEL_CMIS_RETRIEVE_CONTENT = "CamelCMISRetrieveContent";

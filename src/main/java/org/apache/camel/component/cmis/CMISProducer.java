@@ -25,15 +25,16 @@ import org.apache.camel.RuntimeExchangeException;
 import org.apache.camel.impl.DefaultProducer;
 import org.apache.camel.util.ExchangeHelper;
 import org.apache.camel.util.MessageHelper;
-import org.apache.chemistry.opencmis.client.api.CmisObject;
-import org.apache.chemistry.opencmis.client.api.Document;
-import org.apache.chemistry.opencmis.client.api.Folder;
+import org.apache.chemistry.opencmis.client.api.*;
 import org.apache.chemistry.opencmis.commons.PropertyIds;
 import org.apache.chemistry.opencmis.commons.data.ContentStream;
 import org.apache.chemistry.opencmis.commons.enums.Action;
 import org.apache.chemistry.opencmis.commons.enums.UnfileObject;
 import org.apache.chemistry.opencmis.commons.enums.VersioningState;
+import org.apache.chemistry.opencmis.commons.exceptions.CmisBaseException;
 import org.apache.chemistry.opencmis.commons.exceptions.CmisObjectNotFoundException;
+import org.apache.chemistry.opencmis.commons.exceptions.CmisRuntimeException;
+import org.apache.chemistry.opencmis.commons.exceptions.CmisUnauthorizedException;
 
 import javax.print.Doc;
 
@@ -133,14 +134,73 @@ public class CMISProducer extends DefaultProducer {
         document.deleteAllVersions();
     }
 
-    private void moveDocument(Exchange exchange)
+    private void moveDocument(Exchange exchange) throws Exception
     {
-        // not implemented yet
+        Message message = exchange.getIn();
+
+        String destinationFolderPath = message.getHeader(CamelCMISConstants.CMIS_DESTIONATION_FOLDER_PATH, String.class);
+        String sourceFolderPath = message.getHeader(CamelCMISConstants.CMIS_FOLDER_PATH, String.class);
+        String path = message.getHeader(CamelCMISConstants.CMIS_DOCUMENT_PATH, String.class);
+
+
+        Folder sourceFolder = getFolderOnPath(exchange, sourceFolderPath);
+        Folder targetFolder = getFolderOnPath(exchange, destinationFolderPath);
+
+        Document document = getDocumentOnPath(exchange, path);
+
+        if(document != null)
+        {
+            if(document.getAllowableActions().getAllowableActions().contains(Action.CAN_MOVE_OBJECT) == false)
+            {
+                throw new CmisUnauthorizedException("Current user does not have permission to move " + path + document.getName());
+            }
+
+            try {
+                document.move(sourceFolder, targetFolder);
+                log.info("Moved document from " + path + " to " + destinationFolderPath );
+            }
+            catch (CmisRuntimeException e)
+            {
+                log.error("Cannot move document to folder " + destinationFolderPath + " : " + e.getMessage());
+            }
+        }
+        else
+        {
+            log.error("Document is null, cannot move!");
+        }
     }
 
-    private void moveFolder(Exchange exchange)
-    {
-        // not implemented yet
+    private void moveFolder(Exchange exchange) throws Exception {
+        Message message = exchange.getIn();
+
+        String destinationFolderPath = message.getHeader(CamelCMISConstants.CMIS_DESTIONATION_FOLDER_PATH, String.class);
+        String sourceFolderPath = message.getHeader(CamelCMISConstants.CMIS_FOLDER_PATH, String.class);
+        String path = message.getHeader(CamelCMISConstants.CMIS_DOCUMENT_PATH, String.class);
+
+
+        Folder sourceFolder = getFolderOnPath(exchange, sourceFolderPath);
+        Folder targetFolder = getFolderOnPath(exchange, destinationFolderPath);
+
+        if(sourceFolder != null)
+        {
+            if(sourceFolder.getAllowableActions().getAllowableActions().contains(Action.CAN_MOVE_OBJECT) == false)
+            {
+                throw new CmisUnauthorizedException("Current user does not have permission to move " + path + sourceFolder.getName());
+            }
+
+            try {
+                sourceFolder.move(sourceFolder, targetFolder);
+                log.info("Moved Folder from " + path + " to " + destinationFolderPath );
+            }
+            catch (CmisRuntimeException e)
+            {
+                log.error("Cannot move Folder to " + destinationFolderPath + " : " + e.getMessage());
+            }
+        }
+        else
+        {
+            log.error("Folder is null, cannot move!");
+        }
     }
 
     private void copyDocument(Exchange exchange) throws Exception {
@@ -153,22 +213,65 @@ public class CMISProducer extends DefaultProducer {
         Document document = getDocumentOnPath(exchange, documentPath);
 
         document.copy(destinationFolder);
-
     }
 
-    private void copyFolder(Exchange exchange)
+    private void copyFolder(Exchange exchange) throws Exception
     {
-        // not implemented yet
+        Message message = exchange.getIn();
+
+        String destinationFolderPath = message.getHeader(CamelCMISConstants.CMIS_FOLDER_PATH, String.class);
+        String sourceFolderPath = message.getHeader(CamelCMISConstants.CMIS_FOLDER_PATH, String.class);
+
+        Folder destinationFolder = getFolderOnPath(exchange, destinationFolderPath);
+        Folder toCopyFolder = getFolderOnPath(exchange, sourceFolderPath);
+
+        copyFolderRecursive(destinationFolder, toCopyFolder);
     }
 
-    private void renameFolder(Exchange exchange)
+    public void copyFolderRecursive(Folder destinationFolder, Folder toCopyFolder)
     {
-        // not implemented yet
+        Map<String, Object> folderProperties = new HashMap<String, Object>();
+        folderProperties.put(PropertyIds.NAME, toCopyFolder.getName());
+        folderProperties.put(PropertyIds.OBJECT_TYPE_ID, toCopyFolder.getBaseTypeId().value());
+        Folder newFolder = destinationFolder.createFolder(folderProperties);
+        copyChildren(newFolder, toCopyFolder);
     }
 
-    private void renameDocument(Exchange exchange)
+    public void copyChildren(Folder destinationFolder, Folder toCopyFolder)
     {
-        // not implemented yet
+        ItemIterable<CmisObject> immediateChildren = toCopyFolder.getChildren();
+        for (CmisObject child : immediateChildren)
+        {
+            if (child instanceof Document)
+            {
+                ((Document) child).copy(destinationFolder);
+            } else if (child instanceof Folder)
+            {
+                copyFolderRecursive(destinationFolder, (Folder) child);
+            }
+        }
+    }
+
+    private void renameFolder(Exchange exchange) throws Exception
+    {
+        Message message = exchange.getIn();
+
+        String newName = message.getHeader(PropertyIds.NAME, String.class);
+        String documentPath = message.getHeader(CamelCMISConstants.CMIS_DOCUMENT_PATH, String.class);
+        CmisObject cmisObject = getDocumentOnPath(exchange, documentPath);
+
+        cmisObject.rename(newName);
+    }
+
+    private void renameDocument(Exchange exchange) throws Exception
+    {
+        Message message = exchange.getIn();
+
+        String newName = message.getHeader(PropertyIds.NAME, String.class);
+        String folderPath = message.getHeader(CamelCMISConstants.CMIS_FOLDER_PATH, String.class);
+        CmisObject cmisObject = getFolderOnPath(exchange, folderPath);
+
+        cmisObject.rename(newName);
     }
 
     private Folder getFolderOnPath(Exchange exchange, String path) throws Exception {
