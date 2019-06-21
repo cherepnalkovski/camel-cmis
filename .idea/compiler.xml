@@ -10,6 +10,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="camel (1)" target="1.5" />
+      <module name="camel (2)" target="1.5" />
       <module name="camel-cmis-component" target="1.8" />
     </bytecodeTargetLevel>
   </component>

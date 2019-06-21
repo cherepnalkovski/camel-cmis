@@ -3,16 +3,15 @@ package com.armedia.explore.camelcmis.flow.queue;
 import com.armedia.explore.camelcmis.Item;
 import org.apache.camel.ProducerTemplate;
 
-public class DeleteDocumentVersionQueue
-{
+public class MoveDocumentQueue {
     private ProducerTemplate producerTemplate;
 
-    public DeleteDocumentVersionQueue(ProducerTemplate producerTemplate) {
+    public MoveDocumentQueue(ProducerTemplate producerTemplate) {
         this.producerTemplate = producerTemplate;
-        producerTemplate.setDefaultEndpointUri("seda:deleteDocumentVersionQueue?timeout=1000000");
+        producerTemplate.setDefaultEndpointUri("seda:moveDocumentQueue");
     }
 
-    public Object deleteDocumentVersion(Item item)
+    public Object moveDocument(Item item)
     {
         return (Object) producerTemplate.requestBody(item);
     }

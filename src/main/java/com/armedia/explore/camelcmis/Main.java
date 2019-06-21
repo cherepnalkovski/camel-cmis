@@ -12,14 +12,28 @@ public class Main {
     public static void main(String[] args) throws Exception {
 
         CamelContext context = init();
+/*
+        createFolder("Vladimir", context);
 
-    //    createFolder("VladimirReflection", context);
+        createFolder("Test", context);*/
 
     //    deleteDocument(context);
 
-    //    copy(context);
+    //    deleteFolder(context);
 
-        deleteFolder(context);
+    //    copyDocument(context);
+
+     //   copyFolder(context); // tested with sub folders and files
+
+    //    moveDocument(context);
+
+    //   moveFolder(context);  // create copy than delete
+
+    //    renameDocument(context);  // Full name with extension
+
+    //    renameFolder(context);
+
+        // replace(context) - uploads new version of the file ?
 
     }
 
@@ -28,8 +42,12 @@ public class Main {
         camelContext.addRoutes(new CreateFolderRoute());
         camelContext.addRoutes(new DeleteFolderRoute());
         camelContext.addRoutes(new DeleteDocumentRoute());
-        camelContext.addRoutes(new DeleteDocumentVersionRoute());
         camelContext.addRoutes(new CopyDocumentRoute());
+        camelContext.addRoutes(new CopyFolderRoute());
+        camelContext.addRoutes(new MoveDocumentRoute());
+        camelContext.addRoutes(new MoveFolderRoute());
+        camelContext.addRoutes(new RenameDocumentRoute());
+        camelContext.addRoutes(new RenameFolderRoute());
         camelContext.start();
 
         return camelContext;
@@ -73,16 +91,77 @@ public class Main {
         System.out.println("DOCUMENT DELETED!!!!!");
     }
 
-    public static void copy(CamelContext camelContext) throws Exception {
+    public static void copyDocument(CamelContext camelContext) throws Exception {
         ProducerTemplate producerTemplate = new DefaultProducerTemplate(camelContext);
         producerTemplate.start();
 
         CopyDocumentQueue copyDocumentQueue = new CopyDocumentQueue(producerTemplate);
         Item copyItem = new Item();
-        copyItem.setDestinationPath("/User Homes/ann-acm/VladimirCopy");
+        copyItem.setDestinationPath("/User Homes/ann-acm/TestRenamed");
         copyItem.setDocumentPath("/User Homes/ann-acm/Vladimir/Test.xlsx");
 
         copyDocumentQueue.copyDocument(copyItem);
 
+    }
+
+    public static void copyFolder(CamelContext camelContext) throws Exception {
+        ProducerTemplate producerTemplate = new DefaultProducerTemplate(camelContext);
+        producerTemplate.start();
+
+        CopyFolderQueue copyFolderQueue = new CopyFolderQueue(producerTemplate);
+        Item item = new Item();
+        item.setDestinationPath("/User Homes/ann-acm/Move");
+        item.setFolderPath("/User Homes/ann-acm/Vladimir");
+
+        copyFolderQueue.copyFolder(item);
+    }
+
+    public static void moveDocument(CamelContext camelContext) throws Exception {
+        ProducerTemplate producerTemplate = new DefaultProducerTemplate(camelContext);
+        producerTemplate.start();
+
+        MoveDocumentQueue moveDocumentQueue = new MoveDocumentQueue(producerTemplate);
+        Item item = new Item();
+        item.setDestinationPath("/User Homes/ann-acm/Vladimir");
+        item.setFolderPath("/User Homes/ann-acm/");
+        item.setDocumentPath("/User Homes/ann-acm/TestRenamed.xlsx");
+
+        moveDocumentQueue.moveDocument(item);
+    }
+
+    public static void moveFolder(CamelContext camelContext) throws Exception {
+        ProducerTemplate producerTemplate = new DefaultProducerTemplate(camelContext);
+        producerTemplate.start();
+
+        MoveFolderQueue moveFolderQueue = new MoveFolderQueue(producerTemplate);
+        Item item = new Item();
+        item.setDestinationPath("/User Homes/ann-acm/Remove");
+        item.setFolderPath("/User Homes/ann-acm/Move");
+
+        moveFolderQueue.moveFolder(item);
+    }
+
+    public static void renameDocument(CamelContext camelContext) throws Exception {
+        ProducerTemplate producerTemplate = new DefaultProducerTemplate(camelContext);
+        producerTemplate.start();
+
+        RenameDocumentQueue renameDocumentQueue = new RenameDocumentQueue(producerTemplate);
+        Item item = new Item();
+        item.setFileName("TestAgain");
+        item.setDocumentPath("/User Homes/ann-acm/TestRenamed1.xlsx");
+
+        renameDocumentQueue.renameDocument(item);
+    }
+
+    public static void renameFolder(CamelContext camelContext) throws Exception {
+        ProducerTemplate producerTemplate = new DefaultProducerTemplate(camelContext);
+        producerTemplate.start();
+
+        RenameFolderQueue renameFolderQueue = new RenameFolderQueue(producerTemplate);
+        Item item = new Item();
+        item.setFolderName("TestRenamed");
+        item.setFolderPath("/User Homes/ann-acm/Test");
+
+        renameFolderQueue.renameFolder(item);
     }
 }

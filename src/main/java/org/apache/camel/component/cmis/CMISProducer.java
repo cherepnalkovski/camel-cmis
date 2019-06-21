@@ -175,32 +175,12 @@ public class CMISProducer extends DefaultProducer {
 
         String destinationFolderPath = message.getHeader(CamelCMISConstants.CMIS_DESTIONATION_FOLDER_PATH, String.class);
         String sourceFolderPath = message.getHeader(CamelCMISConstants.CMIS_FOLDER_PATH, String.class);
-        String path = message.getHeader(CamelCMISConstants.CMIS_DOCUMENT_PATH, String.class);
 
-
-        Folder sourceFolder = getFolderOnPath(exchange, sourceFolderPath);
+        Folder toBeMoved = getFolderOnPath(exchange, sourceFolderPath);
         Folder targetFolder = getFolderOnPath(exchange, destinationFolderPath);
 
-        if(sourceFolder != null)
-        {
-            if(sourceFolder.getAllowableActions().getAllowableActions().contains(Action.CAN_MOVE_OBJECT) == false)
-            {
-                throw new CmisUnauthorizedException("Current user does not have permission to move " + path + sourceFolder.getName());
-            }
-
-            try {
-                sourceFolder.move(sourceFolder, targetFolder);
-                log.info("Moved Folder from " + path + " to " + destinationFolderPath );
-            }
-            catch (CmisRuntimeException e)
-            {
-                log.error("Cannot move Folder to " + destinationFolderPath + " : " + e.getMessage());
-            }
-        }
-        else
-        {
-            log.error("Folder is null, cannot move!");
-        }
+        copyFolderRecursive(targetFolder, toBeMoved);
+        toBeMoved.deleteTree(true, UnfileObject.DELETE, true);
     }
 
     private void copyDocument(Exchange exchange) throws Exception {
@@ -219,7 +199,7 @@ public class CMISProducer extends DefaultProducer {
     {
         Message message = exchange.getIn();
 
-        String destinationFolderPath = message.getHeader(CamelCMISConstants.CMIS_FOLDER_PATH, String.class);
+        String destinationFolderPath = message.getHeader(CamelCMISConstants.CMIS_DESTIONATION_FOLDER_PATH, String.class);
         String sourceFolderPath = message.getHeader(CamelCMISConstants.CMIS_FOLDER_PATH, String.class);
 
         Folder destinationFolder = getFolderOnPath(exchange, destinationFolderPath);
@@ -252,26 +232,38 @@ public class CMISProducer extends DefaultProducer {
         }
     }
 
-    private void renameFolder(Exchange exchange) throws Exception
-    {
-        Message message = exchange.getIn();
-
-        String newName = message.getHeader(PropertyIds.NAME, String.class);
-        String documentPath = message.getHeader(CamelCMISConstants.CMIS_DOCUMENT_PATH, String.class);
-        CmisObject cmisObject = getDocumentOnPath(exchange, documentPath);
-
-        cmisObject.rename(newName);
-    }
-
     private void renameDocument(Exchange exchange) throws Exception
     {
         Message message = exchange.getIn();
 
         String newName = message.getHeader(PropertyIds.NAME, String.class);
-        String folderPath = message.getHeader(CamelCMISConstants.CMIS_FOLDER_PATH, String.class);
-        CmisObject cmisObject = getFolderOnPath(exchange, folderPath);
+        String documentPath = message.getHeader(CamelCMISConstants.CMIS_DOCUMENT_PATH, String.class);
+        try {
+            CmisObject cmisObject = getDocumentOnPath(exchange, documentPath);
+            cmisObject.rename(newName);
+        }
+        catch (Exception e)
+        {
+            throw new CmisObjectNotFoundException("Document: " + documentPath + " not found!");
+        }
+    }
 
-        cmisObject.rename(newName);
+    private void renameFolder(Exchange exchange) throws Exception
+    {
+        Message message = exchange.getIn();
+
+        String newName = message.getHeader(PropertyIds.NAME, String.class);
+        String folderPath = message.getHeader(CamelCMISConstants.CMIS_FOLDER_PATH, String.class);
+
+        try
+        {
+            CmisObject cmisObject = getFolderOnPath(exchange, folderPath);
+            cmisObject.rename(newName);
+        }
+        catch (Exception e)
+        {
+            throw new CmisObjectNotFoundException("Folder: " + folderPath + " not found!");
+        }
     }
 
     private Folder getFolderOnPath(Exchange exchange, String path) throws Exception {
