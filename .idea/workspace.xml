@@ -2,20 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c5bb533-13fe-4d53-9e5f-d845c230a23f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/queue/MoveDocumentQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/queue/MoveFolderQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/queue/RenameDocumentQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/queue/RenameFolderQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/MoveDocumentRoute.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/MoveFolderRoute.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/RenameDocumentRoute.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/RenameFolderRoute.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/queue/CancelCheckoutQueue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/queue/CheckInQueue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/queue/CheckOutQueue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/queue/CreateDocumentQueue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/queue/ReplaceFileQueue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/CancelCheckoutRoute.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/CheckInRoute.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/CheckOutRoute.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/CreateDocumentRoute.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/ReplaceFileRoute.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/apache/camel/component/cmis/CMISSessionFacade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/camel-cmis-component.iml" beforeDir="false" afterPath="$PROJECT_DIR$/camel-cmis-component.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/queue/DeleteDocumentVersionQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/queue/CopyFolderQueue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/DeleteDocumentVersionRoute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/CopyFolderRoute.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/CopyDocumentRoute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/CopyDocumentRoute.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/CopyFolderRoute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/CopyFolderRoute.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/CreateFolderRoute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/CreateFolderRoute.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/DeleteDocumentRoute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/DeleteDocumentRoute.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/DeleteFolderRoute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/DeleteFolderRoute.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/MoveDocumentRoute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/MoveDocumentRoute.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/MoveFolderRoute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/MoveFolderRoute.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/RenameDocumentRoute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/RenameDocumentRoute.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/RenameFolderRoute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/RenameFolderRoute.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/apache/camel/component/cmis/CMISProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/apache/camel/component/cmis/CMISProducer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/apache/camel/component/cmis/CamelCMISActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/apache/camel/component/cmis/CamelCMISActions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/apache/camel/component/cmis/CamelCMISConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/apache/camel/component/cmis/CamelCMISConstants.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -31,14 +45,30 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="35" column="63" selection-start-line="35" selection-start-column="63" selection-end-line="35" selection-end-column="63" />
+            <state relative-caret-position="594">
+              <caret line="98" column="25" selection-start-line="98" selection-start-column="25" selection-end-line="98" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#createFolder#0;class#Main#0" />
                 <element signature="method#deleteFolder#0;class#Main#0" />
                 <element signature="method#deleteDocument#0;class#Main#0" />
+                <element signature="method#copyDocument#0;class#Main#0" />
+                <element signature="method#copyFolder#0;class#Main#0" />
+                <element signature="method#moveDocument#0;class#Main#0" />
+                <element signature="method#moveFolder#0;class#Main#0" />
+                <element signature="method#renameDocument#0;class#Main#0" />
+                <element signature="method#renameFolder#0;class#Main#0" />
+                <element signature="method#cancelCheckOut#0;class#Main#0" />
+                <element signature="method#replaceFileRoute#0;class#Main#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/RenameDocumentRoute.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="16" column="87" selection-start-line="16" selection-start-column="73" selection-end-line="16" selection-end-column="87" />
             </state>
           </provider>
         </entry>
@@ -46,19 +76,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/camel/component/cmis/CMISProducer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="210" column="16" selection-start-line="210" selection-start-column="16" selection-end-line="210" selection-end-column="16" />
+            <state relative-caret-position="292">
+              <caret line="97" column="44" lean-forward="true" selection-start-line="97" selection-start-column="44" selection-end-line="97" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#deleteFolder#0;class#CMISProducer#0" />
-                <element signature="method#deleteDocument#0;class#CMISProducer#0" />
-                <element signature="method#moveDocument#0;class#CMISProducer#0" />
-                <element signature="method#copyDocument#0;class#CMISProducer#0" />
-                <element signature="method#copyChildren#0;class#CMISProducer#0" />
-                <element signature="method#renameFolder#0;class#CMISProducer#0" />
-                <element signature="e#15145#15146#0" expanded="true" />
-                <element signature="e#15197#15198#0" expanded="true" />
+                <element signature="method#process#0;class#CMISProducer#0" />
+                <element signature="method#filterTypeProperties#0;class#CMISProducer#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/MoveFolderRoute.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="16" column="140" selection-start-line="16" selection-start-column="140" selection-end-line="16" selection-end-column="140" />
             </state>
           </provider>
         </entry>
@@ -75,36 +108,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>objectbypath</find>
-      <find>getObjectByPath</find>
-      <find>Document</find>
-      <find>getobje</find>
-      <find>getFolderOnPath</find>
-      <find>seda:createFolderQueue</find>
-      <find>deletedo</find>
-      <find>session</find>
-      <find>document1</find>
-      <find>delete</find>
-      <find>delete\</find>
-      <find>document do</find>
-      <find>copy_</find>
-      <find>getobject</find>
-      <find>copyfol</find>
-      <find>swit</find>
-      <find>цре</find>
-      <find>Vladimir</find>
-      <find>copy</find>
-      <find>CmisObject</find>
-      <find>CMISSess</find>
-      <find>Session</find>
-      <find>ObjectId</find>
-      <find>deletedocumentv</find>
-      <find>version</find>
-      <find>rename</find>
-      <find>movefo</find>
-      <find>moveF</find>
-      <find>recur</find>
       <find>deleteTree</find>
+      <find>checkout</find>
+      <find>chec</find>
+      <find>document</find>
+      <find>id</find>
+      <find>folderid</find>
+      <find>getobject</find>
+      <find>getobject(</find>
+      <find>checkOut(</find>
+      <find>getobjectby</find>
+      <find>objectid</find>
+      <find>getdocu</find>
+      <find>session</find>
+      <find>properties</find>
+      <find>ContentStream</find>
+      <find>createno</find>
+      <find>checkin</find>
+      <find>mimet</find>
+      <find>replace</find>
+      <find>checkou</find>
+      <find>OBJECT</find>
+      <find>dest</find>
+      <find>createnode</find>
+      <find>deletefo</find>
+      <find>movedo</find>
+      <find>movefol</find>
+      <find>toBeMoved</find>
+      <find>parentfolder</find>
+      <find>parentfolderpa</find>
+      <find>copydoc</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -118,7 +151,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/ArkcaseCMISComponent.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/ArkCaseCMISEndpoint.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/CmisBean.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/org/apache/camel/component/cmis/ArkCaseCMISSessionFacade.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/DeleteFolderQueue.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/CreateFolderRoute.java" />
@@ -126,28 +158,42 @@
         <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/DeleteFileRoute.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/queue/DeleteFileQueue.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/queue/DeleteDocumentQueue.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/CreateFolderRoute.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/queue/DeleteDocumentVersionQueue.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/queue/CopyDocumentQueue.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/Item.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/CopyDocumentRoute.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/DeleteDocumentRoute.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/DeleteDocumentVersionRoute.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/apache/camel/component/cmis/MethodUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/apache/camel/component/cmis/CommandExecutor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/apache/camel/component/cmis/CamelCMISActions.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/apache/camel/component/cmis/CamelCMISConstants.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/queue/CopyFolderQueue.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/queue/MoveDocumentQueue.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/queue/MoveFolderQueue.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/queue/RenameDocumentQueue.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/queue/RenameFolderQueue.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/org/apache/camel/component/cmis/CamelCMISActions.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/apache/camel/component/cmis/CMISSessionFacade.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/queue/CreateDocumentQueue.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/CheckoutRoute.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/queue/ReplaceFileQueue.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/ReplaceFileRoute.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/queue/CheckInQueue.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/queue/CheckOutQueue.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/CheckOutRoute.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/CancelCheckoutRoute.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/queue/CancelCheckoutQueue.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/DeleteDocumentRoute.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/DeleteFolderRoute.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/apache/camel/component/cmis/CamelCMISConstants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/apache/camel/component/cmis/CMISProducer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/CheckInRoute.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/CopyDocumentRoute.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/CreateDocumentRoute.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/CreateFolderRoute.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/Item.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/RenameDocumentRoute.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/RenameFolderRoute.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/CopyFolderRoute.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/MoveDocumentRoute.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/MoveFolderRoute.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/RenameDocumentRoute.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/RenameFolderRoute.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/apache/camel/component/cmis/CMISProducer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/Main.java" />
       </list>
     </option>
@@ -166,14 +212,16 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
+    <option name="x" value="1592" />
     <option name="y" value="-8" />
-    <option name="width" value="1616" />
-    <option name="height" value="876" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
+      <autoscrollToSource ProjectPane="false" />
+      <autoscrollFromSource ProjectPane="true" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
@@ -207,7 +255,45 @@
               <item name="Camel-cmis-component" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="camelcmis" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Camel-cmis-component" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Camel-cmis-component" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="camelcmis" type="462c0819:PsiDirectoryNode" />
+              <item name="flow" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Camel-cmis-component" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Camel-cmis-component" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="camelcmis" type="462c0819:PsiDirectoryNode" />
+              <item name="flow" type="462c0819:PsiDirectoryNode" />
+              <item name="queue" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Camel-cmis-component" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Camel-cmis-component" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="camelcmis" type="462c0819:PsiDirectoryNode" />
+              <item name="flow" type="462c0819:PsiDirectoryNode" />
+              <item name="route" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Camel-cmis-component" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Camel-cmis-component" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cmis" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Camel-cmis-component" type="b2602c69:ProjectViewProjectNode" />
@@ -215,11 +301,141 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Camel-cmis-component" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="Camel-cmis-component" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.apache.camel:camel-cmis:2.20.2" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="Camel-cmis-component" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.apache.camel:camel-cmis:2.20.2" type="70bed36:NamedLibraryElementNode" />
+              <item name="camel-cmis-2.20.2.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Camel-cmis-component" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.apache.camel:camel-cmis:2.20.2" type="70bed36:NamedLibraryElementNode" />
+              <item name="camel-cmis-2.20.2.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="cmis" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Camel-cmis-component" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.apache.camel:camel-core:2.20.2" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="Camel-cmis-component" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.apache.camel:camel-core:2.20.2" type="70bed36:NamedLibraryElementNode" />
+              <item name="camel-core-2.20.2.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Camel-cmis-component" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.apache.camel:camel-core:2.20.2" type="70bed36:NamedLibraryElementNode" />
+              <item name="camel-core-2.20.2.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="camel" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Camel-cmis-component" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.apache.camel:camel-core:2.20.2" type="70bed36:NamedLibraryElementNode" />
+              <item name="camel-core-2.20.2.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="camel" type="462c0819:PsiDirectoryNode" />
+              <item name="builder" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Camel-cmis-component" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.apache.camel:camel-core:2.20.2" type="70bed36:NamedLibraryElementNode" />
+              <item name="camel-core-2.20.2.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="camel" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Camel-cmis-component" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.apache.chemistry.opencmis:chemistry-opencmis-client-api:1.1.0" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="Camel-cmis-component" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.apache.chemistry.opencmis:chemistry-opencmis-client-api:1.1.0" type="70bed36:NamedLibraryElementNode" />
+              <item name="chemistry-opencmis-client-api-1.1.0.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Camel-cmis-component" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.apache.chemistry.opencmis:chemistry-opencmis-client-api:1.1.0" type="70bed36:NamedLibraryElementNode" />
+              <item name="chemistry-opencmis-client-api-1.1.0.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Camel-cmis-component" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.apache.chemistry.opencmis:chemistry-opencmis-client-api:1.1.0" type="70bed36:NamedLibraryElementNode" />
+              <item name="chemistry-opencmis-client-api-1.1.0.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Camel-cmis-component" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.apache.chemistry.opencmis:chemistry-opencmis-client-impl:1.1.0" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="Camel-cmis-component" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.apache.chemistry.opencmis:chemistry-opencmis-client-impl:1.1.0" type="70bed36:NamedLibraryElementNode" />
+              <item name="chemistry-opencmis-client-impl-1.1.0.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Camel-cmis-component" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.apache.chemistry.opencmis:chemistry-opencmis-client-impl:1.1.0" type="70bed36:NamedLibraryElementNode" />
+              <item name="chemistry-opencmis-client-impl-1.1.0.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Camel-cmis-component" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.apache.chemistry.opencmis:chemistry-opencmis-client-impl:1.1.0" type="70bed36:NamedLibraryElementNode" />
+              <item name="chemistry-opencmis-client-impl-1.1.0.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="runtime" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Camel-cmis-component" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.apache.chemistry.opencmis:chemistry-opencmis-client-impl:1.1.0" type="70bed36:NamedLibraryElementNode" />
+              <item name="chemistry-opencmis-client-impl-1.1.0.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="runtime" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Camel-cmis-component" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.apache.chemistry.opencmis:chemistry-opencmis-commons-api:1.1.0" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="Camel-cmis-component" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.apache.chemistry.opencmis:chemistry-opencmis-commons-api:1.1.0" type="70bed36:NamedLibraryElementNode" />
+              <item name="chemistry-opencmis-commons-api-1.1.0.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Camel-cmis-component" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.apache.chemistry.opencmis:chemistry-opencmis-commons-api:1.1.0" type="70bed36:NamedLibraryElementNode" />
+              <item name="chemistry-opencmis-commons-api-1.1.0.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="commons" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -238,11 +454,15 @@
     <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561110226376" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562325774779" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Apache/camel" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.armedia.explore.camelcmis.flow.queue" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Projects\Camel-cmis-component" />
       <recent name="C:\Projects\Camel-cmis-component\src\main\java\org\apache\camel\component\cmis" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -250,8 +470,7 @@
       <recent name="com.armedia.explore.camelcmis.flow.queue" />
       <recent name="com.armedia.explore.camelcmis" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Projects\Camel-cmis-component" />
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Projects\Camel-cmis-component\src\main\java\org\apache\camel\component\cmis" />
     </key>
   </component>
@@ -324,15 +543,22 @@
       <workItem from="1560415486687" duration="1324000" />
       <workItem from="1560777081349" duration="523000" />
       <workItem from="1560844147214" duration="1681000" />
-      <workItem from="1560861665428" duration="13315000" />
+      <workItem from="1560861665428" duration="13785000" />
+      <workItem from="1561464670696" duration="1146000" />
+      <workItem from="1561637853496" duration="17000" />
+      <workItem from="1561726081369" duration="1593000" />
+      <workItem from="1561968447145" duration="2623000" />
+      <workItem from="1562054707014" duration="2169000" />
+      <workItem from="1562149826723" duration="21538000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60242000" />
+    <option name="totallyTimeSpent" value="89798000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <frame x="1592" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Image Layers" order="0" />
       <window_info id="UI Designer" order="1" />
@@ -340,9 +566,9 @@
       <window_info id="Capture Tool" order="3" />
       <window_info id="Web" order="4" side_tool="true" />
       <window_info id="Designer" order="5" />
-      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.27056554" />
+      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.18443497" />
       <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="0" weight="0.15926327" />
+      <window_info anchor="bottom" id="Terminal" order="0" weight="0.18004338" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="2" weight="0.329718" />
       <window_info anchor="bottom" id="Java Enterprise" order="3" weight="0.329718" />
@@ -350,9 +576,9 @@
       <window_info anchor="bottom" id="Version Control" order="5" show_stripe_button="false" />
       <window_info anchor="bottom" id="Spring" order="6" />
       <window_info anchor="bottom" id="Message" order="7" />
-      <window_info anchor="bottom" id="Find" order="8" weight="0.329718" />
-      <window_info anchor="bottom" id="Run" order="9" visible="true" weight="0.35666218" />
-      <window_info anchor="bottom" id="Debug" order="10" weight="0.27410617" />
+      <window_info active="true" anchor="bottom" id="Find" order="8" visible="true" weight="0.329718" />
+      <window_info anchor="bottom" id="Run" order="9" weight="0.18763557" />
+      <window_info anchor="bottom" id="Debug" order="10" weight="0.22993493" />
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="13" />
@@ -390,12 +616,6 @@
           <option name="timeStamp" value="32" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/apache/camel/component/cmis/CMISProducer.java</url>
-          <line>116</line>
-          <properties />
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/DeleteDocumentRoute.java</url>
           <line>15</line>
           <properties />
@@ -419,23 +639,55 @@
           <properties />
           <option name="timeStamp" value="67" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/apache/camel/component/cmis/CMISProducer.java</url>
+          <line>101</line>
+          <properties />
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/apache/camel/component/cmis/CMISProducer.java</url>
+          <line>290</line>
+          <properties />
+          <option name="timeStamp" value="77" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>version.getVersionLabel()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
         <expression-string>exchange.getIn().getHeaders()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
+        <expression-string>((Item) exchange.getIn().getBody()).getObjectId()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>exchange.getIn().getBody()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>exchange.getIn().getBody(byte[].class)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
         <expression-string>exchange.getIn()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>document.getName()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>version.getVersionLabel()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -449,194 +701,158 @@
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>context.isIncludeAcls()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>context.getIncludeRelationships()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>context.isIncludeAllowableActions()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>context.getFilterString()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/chemistry/opencmis/chemistry-opencmis-client-api/1.1.0/chemistry-opencmis-client-api-1.1.0.jar!/org/apache/chemistry/opencmis/client/api/Folder.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="37" column="17" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/queue/DeleteFolderQueue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="18" column="5" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="18" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/chemistry/opencmis/chemistry-opencmis-client-impl/1.1.0/chemistry-opencmis-client-impl-1.1.0.jar!/org/apache/chemistry/opencmis/client/runtime/FolderImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="65" column="48" lean-forward="true" selection-start-line="65" selection-start-column="48" selection-end-line="65" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/chemistry/opencmis/chemistry-opencmis-client-bindings/1.1.0/chemistry-opencmis-client-bindings-1.1.0.jar!/org/apache/chemistry/opencmis/client/bindings/spi/atompub/ObjectServiceImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="443" column="37" selection-start-line="443" selection-start-column="25" selection-end-line="443" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/camel/camel-cmis/2.20.2/camel-cmis-2.20.2.jar!/org/apache/camel/component/cmis/CMISSessionFacade.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="195" column="22" selection-start-line="195" selection-start-column="22" selection-end-line="195" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/queue/DeleteDocumentQueue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/camel/camel-core/2.20.2/camel-core-2.20.2.jar!/org/apache/camel/processor/SendProcessor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="120" selection-start-line="120" selection-end-line="120" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/camel/camel-core/2.20.2/camel-core-2.20.2.jar!/org/apache/camel/processor/RedeliveryErrorHandler.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="280" selection-start-line="280" selection-end-line="280" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/camel/camel-core/2.20.2/camel-core-2.20.2.jar!/org/apache/camel/component/seda/SedaConsumer.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="150" selection-start-line="150" selection-end-line="150" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/chemistry/opencmis/chemistry-opencmis-client-impl/1.1.0/chemistry-opencmis-client-impl-1.1.0.jar!/org/apache/chemistry/opencmis/client/runtime/SessionImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="410" selection-start-line="410" selection-end-line="410" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/chemistry/opencmis/chemistry-opencmis-client-api/1.1.0/chemistry-opencmis-client-api-1.1.0.jar!/org/apache/chemistry/opencmis/client/api/DocumentProperties.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/chemistry/opencmis/chemistry-opencmis-client-bindings/1.1.0/chemistry-opencmis-client-bindings-1.1.0.jar!/org/apache/chemistry/opencmis/client/bindings/spi/atompub/AbstractAtomPubService.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="657" selection-start-line="657" selection-end-line="657" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/chemistry/opencmis/chemistry-opencmis-client-api/1.1.0/chemistry-opencmis-client-api-1.1.0-sources.jar!/org/apache/chemistry/opencmis/client/api/FileableCmisObject.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/chemistry/opencmis/chemistry-opencmis-client-impl/1.1.0/chemistry-opencmis-client-impl-1.1.0-sources.jar!/org/apache/chemistry/opencmis/client/runtime/AbstractCmisObject.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/chemistry/opencmis/chemistry-opencmis-client-bindings/1.1.0/chemistry-opencmis-client-bindings-1.1.0-sources.jar!/org/apache/chemistry/opencmis/client/bindings/impl/CmisBindingImpl.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/chemistry/opencmis/chemistry-opencmis-client-impl/1.1.0/chemistry-opencmis-client-impl-1.1.0-sources.jar!/org/apache/chemistry/opencmis/client/runtime/AbstractFilableCmisObject.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/chemistry/opencmis/chemistry-opencmis-client-impl/1.1.0/chemistry-opencmis-client-impl-1.1.0-sources.jar!/org/apache/chemistry/opencmis/client/runtime/FolderImpl.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/chemistry/opencmis/chemistry-opencmis-client-impl/1.1.0/chemistry-opencmis-client-impl-1.1.0-sources.jar!/org/apache/chemistry/opencmis/client/runtime/SessionImpl.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/chemistry/opencmis/chemistry-opencmis-client-bindings/1.1.0/chemistry-opencmis-client-bindings-1.1.0-sources.jar!/org/apache/chemistry/opencmis/client/bindings/spi/atompub/ObjectServiceImpl.java" />
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="61" column="46" lean-forward="true" selection-start-line="61" selection-start-column="46" selection-end-line="61" selection-end-column="46" />
+        <state relative-caret-position="1020">
+          <caret line="69" column="21" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/camel/camel-core/2.20.2/camel-core-2.20.2.jar!/org/apache/camel/impl/DefaultProducer.class" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/ArkcaseCMISComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/chemistry/opencmis/chemistry-opencmis-client-impl/1.1.0/chemistry-opencmis-client-impl-1.1.0.jar!/org/apache/chemistry/opencmis/client/runtime/cache/CacheImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="167" column="37" selection-start-line="167" selection-start-column="8" selection-end-line="167" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/chemistry/opencmis/chemistry-opencmis-client-api/1.1.0/chemistry-opencmis-client-api-1.1.0.jar!/org/apache/chemistry/opencmis/client/api/Document.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+        <state relative-caret-position="340">
+          <caret line="58" column="18" selection-start-line="58" selection-start-column="18" selection-end-line="58" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/chemistry/opencmis/chemistry-opencmis-client-api/1.1.0/chemistry-opencmis-client-api-1.1.0.jar!/org/apache/chemistry/opencmis/client/api/CmisObject.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/camel/camel-core/2.20.2/camel-core-2.20.2.jar!/org/apache/camel/impl/DefaultProducer.class">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/chemistry/opencmis/chemistry-opencmis-client-impl/1.1.0/chemistry-opencmis-client-impl-1.1.0.jar!/org/apache/chemistry/opencmis/client/runtime/repository/RepositoryImpl.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/chemistry/opencmis/chemistry-opencmis-client-bindings/1.1.0/chemistry-opencmis-client-bindings-1.1.0.jar!/org/apache/chemistry/opencmis/client/bindings/spi/atompub/VersioningServiceImpl.class">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/chemistry/opencmis/chemistry-opencmis-client-impl/1.1.0/chemistry-opencmis-client-impl-1.1.0.jar!/org/apache/chemistry/opencmis/client/runtime/SessionFactoryImpl.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="103" column="19" selection-start-line="103" selection-start-column="19" selection-end-line="103" selection-end-column="19" />
+        <state relative-caret-position="102">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/queue/DeleteDocumentVersionQueue.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/chemistry/opencmis/chemistry-opencmis-client-api/1.1.0/chemistry-opencmis-client-api-1.1.0.jar!/org/apache/chemistry/opencmis/client/api/Session.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        <state relative-caret-position="102">
+          <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/Item.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/chemistry/opencmis/chemistry-opencmis-client-impl/1.1.0/chemistry-opencmis-client-impl-1.1.0.jar!/org/apache/chemistry/opencmis/client/runtime/SessionImpl.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="52" column="40" selection-start-line="52" selection-start-column="40" selection-end-line="52" selection-end-column="40" />
+        <state relative-caret-position="242">
+          <caret line="378" column="14" selection-start-line="378" selection-start-column="14" selection-end-line="378" selection-end-column="14" />
+          <folding>
+            <element signature="e#17729#17730#0" expanded="true" />
+            <element signature="e#17802#17803#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/queue/CreateFolderQueue.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/chemistry/opencmis/chemistry-opencmis-client-impl/1.1.0/chemistry-opencmis-client-impl-1.1.0.jar!/org/apache/chemistry/opencmis/client/runtime/FolderImpl.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="191">
+          <caret line="171" column="41" selection-start-line="171" selection-start-column="41" selection-end-line="171" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/CreateFolderRoute.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/chemistry/opencmis/chemistry-opencmis-client-impl/1.1.0/chemistry-opencmis-client-impl-1.1.0.jar!/org/apache/chemistry/opencmis/client/runtime/repository/ObjectFactoryImpl.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="34">
+          <caret line="321" column="22" selection-start-line="321" selection-start-column="22" selection-end-line="321" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/DeleteDocumentRoute.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/chemistry/opencmis/chemistry-opencmis-client-impl/1.1.0/chemistry-opencmis-client-impl-1.1.0.jar!/org/apache/chemistry/opencmis/client/runtime/AbstractCmisObject.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="16" column="91" selection-start-line="16" selection-start-column="91" selection-end-line="16" selection-end-column="91" />
+        <state relative-caret-position="2292">
+          <caret line="486" column="29" selection-start-line="486" selection-start-column="22" selection-end-line="486" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/DeleteDocumentVersionRoute.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/camel/camel-cmis/2.20.2/camel-cmis-2.20.2.jar!/org/apache/camel/component/cmis/CMISSessionFacade.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="16" column="91" selection-start-line="16" selection-start-column="91" selection-end-line="16" selection-end-column="91" />
+        <state relative-caret-position="-765">
+          <caret line="37" column="34" lean-forward="true" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/DeleteFolderRoute.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/chemistry/opencmis/chemistry-opencmis-client-impl/1.1.0/chemistry-opencmis-client-impl-1.1.0.jar!/org/apache/chemistry/opencmis/client/runtime/DocumentImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="294" column="139" selection-start-line="294" selection-start-column="129" selection-end-line="294" selection-end-column="139" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/queue/CreateDocumentQueue.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/camel/camel-core/2.20.2/camel-core-2.20.2.jar!/org/apache/camel/util/AsyncProcessorConverterHelper.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/queue/CheckInQueue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="10" column="55" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/queue/CheckOutQueue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="10" column="55" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/camel/camel-core/2.20.2/camel-core-2.20.2.jar!/org/apache/camel/builder/RouteBuilder.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="300" selection-start-line="300" selection-end-line="300" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/camel/component/cmis/CamelCMISActions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="6" column="64" selection-start-line="6" selection-start-column="54" selection-end-line="6" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/queue/CancelCheckoutQueue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="72" selection-start-line="11" selection-start-column="72" selection-end-line="11" selection-end-column="72" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -645,211 +861,194 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/queue/CopyDocumentQueue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/CopyDocumentRoute.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/camel/component/cmis/MethodUtil.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/camel/component/cmis/CommandExecutor.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/camel/component/cmis/CamelCMISConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="23" column="23" lean-forward="true" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/chemistry/opencmis/chemistry-opencmis-client-api/1.1.0/chemistry-opencmis-client-api-1.1.0-sources.jar!/org/apache/chemistry/opencmis/client/api/OperationContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1020">
-          <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/chemistry/opencmis/chemistry-opencmis-client-api/1.1.0/chemistry-opencmis-client-api-1.1.0-sources.jar!/org/apache/chemistry/opencmis/client/api/ObjectId.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="26" column="28" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/camel/component/cmis/ArkCaseCMISSessionFacade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="39" column="98" selection-start-line="39" selection-start-column="98" selection-end-line="39" selection-end-column="98" />
+        <state relative-caret-position="289">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#461#462#0" expanded="true" />
+            <element signature="e#527#528#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/camel/component/cmis/CamelCMISActions.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/chemistry/opencmis/chemistry-opencmis-commons-api/1.1.0/chemistry-opencmis-commons-api-1.1.0.jar!/org/apache/chemistry/opencmis/commons/PropertyIds.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+        <state relative-caret-position="397">
+          <caret line="42" column="35" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/queue/CopyFolderQueue.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/chemistry/opencmis/chemistry-opencmis-client-api/1.1.0/chemistry-opencmis-client-api-1.1.0.jar!/org/apache/chemistry/opencmis/client/api/Folder.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="28" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="28" />
+        <state relative-caret-position="228">
+          <caret line="27" column="11" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/queue/RenameDocumentQueue.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/camel/component/cmis/CamelCMISConstants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="13" column="32" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+        <state relative-caret-position="136">
+          <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/queue/RenameFolderQueue.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/camel/component/cmis/CMISSessionFacade.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+        <state relative-caret-position="223">
+          <caret line="199" column="22" selection-start-line="199" selection-start-column="22" selection-end-line="199" selection-end-column="22" />
+          <folding>
+            <element signature="e#7582#7583#0" expanded="true" />
+            <element signature="e#7631#7632#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/queue/MoveDocumentQueue.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/CancelCheckoutRoute.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+        <state relative-caret-position="187">
+          <caret line="16" column="117" selection-start-line="16" selection-start-column="117" selection-end-line="16" selection-end-column="117" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/CopyFolderRoute.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/CheckInRoute.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="18" column="114" selection-start-line="18" selection-start-column="114" selection-end-line="18" selection-end-column="114" />
+          <caret line="18" column="127" selection-start-line="18" selection-start-column="127" selection-end-line="18" selection-end-column="127" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/MoveDocumentRoute.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/CheckOutRoute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/CreateDocumentRoute.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="19" column="116" selection-start-line="19" selection-start-column="116" selection-end-line="19" selection-end-column="116" />
+          <caret line="19" column="104" lean-forward="true" selection-start-line="19" selection-start-column="104" selection-end-line="19" selection-end-column="104" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/camel/camel-core/2.20.2/camel-core-2.20.2.jar!/org/apache/camel/util/AsyncProcessorConverterHelper.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/Item.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="32" column="75" selection-start-line="32" selection-start-column="75" selection-end-line="32" selection-end-column="75" />
+        <state relative-caret-position="221">
+          <caret line="13" column="28" lean-forward="true" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
+          <folding>
+            <element signature="e#1108#1109#0" expanded="true" />
+            <element signature="e#1141#1142#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/RenameFolderRoute.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="15" column="94" selection-start-line="15" selection-start-column="94" selection-end-line="15" selection-end-column="94" />
+        <state relative-caret-position="204">
+          <caret line="17" column="117" selection-start-line="17" selection-start-column="117" selection-end-line="17" selection-end-column="117" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/RenameDocumentRoute.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/ReplaceFileRoute.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="49" lean-forward="true" selection-start-column="49" selection-end-column="49" />
+        <state relative-caret-position="187">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/queue/MoveFolderQueue.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/queue/ReplaceFileQueue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
+        <state relative-caret-position="153">
+          <caret line="10" column="69" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/DeleteFolderRoute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="126" selection-start-line="16" selection-start-column="126" selection-end-line="16" selection-end-column="126" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/DeleteDocumentRoute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="16" column="126" selection-start-line="16" selection-start-column="126" selection-end-line="16" selection-end-column="126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/CreateFolderRoute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="17" column="139" selection-start-line="17" selection-start-column="139" selection-end-line="17" selection-end-column="139" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/CopyDocumentRoute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="17" column="162" selection-start-line="17" selection-start-column="162" selection-end-line="17" selection-end-column="162" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/CopyFolderRoute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="16" column="128" selection-start-line="16" selection-start-column="128" selection-end-line="16" selection-end-column="128" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/MoveDocumentRoute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="18" column="83" lean-forward="true" selection-start-line="18" selection-start-column="83" selection-end-line="18" selection-end-column="83" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/MoveFolderRoute.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="17" column="89" selection-start-line="17" selection-start-column="73" selection-end-line="17" selection-end-column="89" />
+        <state relative-caret-position="187">
+          <caret line="16" column="140" selection-start-line="16" selection-start-column="140" selection-end-line="16" selection-end-column="140" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/chemistry/opencmis/chemistry-opencmis-client-api/1.1.0/chemistry-opencmis-client-api-1.1.0-sources.jar!/org/apache/chemistry/opencmis/client/api/FileableCmisObject.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/flow/route/RenameDocumentRoute.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/chemistry/opencmis/chemistry-opencmis-client-impl/1.1.0/chemistry-opencmis-client-impl-1.1.0-sources.jar!/org/apache/chemistry/opencmis/client/runtime/AbstractCmisObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="545" selection-start-line="545" selection-end-line="545" />
-          <folding>
-            <element signature="e#10367#10368#0" expanded="true" />
-            <element signature="e#10420#10421#0" expanded="true" />
-            <element signature="e#10732#10733#0" expanded="true" />
-            <element signature="e#10780#10781#0" expanded="true" />
-            <element signature="e#18389#18390#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/chemistry/opencmis/chemistry-opencmis-client-bindings/1.1.0/chemistry-opencmis-client-bindings-1.1.0-sources.jar!/org/apache/chemistry/opencmis/client/bindings/impl/CmisBindingImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="205" selection-start-line="205" selection-end-line="205" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/chemistry/opencmis/chemistry-opencmis-client-impl/1.1.0/chemistry-opencmis-client-impl-1.1.0-sources.jar!/org/apache/chemistry/opencmis/client/runtime/AbstractFilableCmisObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="147" selection-start-line="147" selection-end-line="147" />
-          <folding>
-            <element signature="e#6751#6759#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/chemistry/opencmis/chemistry-opencmis-client-bindings/1.1.0/chemistry-opencmis-client-bindings-1.1.0-sources.jar!/org/apache/chemistry/opencmis/client/bindings/spi/atompub/ObjectServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="684" selection-start-line="684" selection-end-line="684" />
-          <folding>
-            <element signature="e#30128#30317#0" expanded="true" />
-            <element signature="e#30316#30317#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="187">
+          <caret line="16" column="87" selection-start-line="16" selection-start-column="73" selection-end-line="16" selection-end-column="87" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/camel/component/cmis/CMISProducer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="210" column="16" selection-start-line="210" selection-start-column="16" selection-end-line="210" selection-end-column="16" />
+        <state relative-caret-position="292">
+          <caret line="97" column="44" lean-forward="true" selection-start-line="97" selection-start-column="44" selection-end-line="97" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#deleteFolder#0;class#CMISProducer#0" />
-            <element signature="method#deleteDocument#0;class#CMISProducer#0" />
-            <element signature="method#moveDocument#0;class#CMISProducer#0" />
-            <element signature="method#copyDocument#0;class#CMISProducer#0" />
-            <element signature="method#copyChildren#0;class#CMISProducer#0" />
-            <element signature="method#renameFolder#0;class#CMISProducer#0" />
-            <element signature="e#15145#15146#0" expanded="true" />
-            <element signature="e#15197#15198#0" expanded="true" />
+            <element signature="method#process#0;class#CMISProducer#0" />
+            <element signature="method#filterTypeProperties#0;class#CMISProducer#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/armedia/explore/camelcmis/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="35" column="63" selection-start-line="35" selection-start-column="63" selection-end-line="35" selection-end-column="63" />
+        <state relative-caret-position="594">
+          <caret line="98" column="25" selection-start-line="98" selection-start-column="25" selection-end-line="98" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#createFolder#0;class#Main#0" />
             <element signature="method#deleteFolder#0;class#Main#0" />
             <element signature="method#deleteDocument#0;class#Main#0" />
+            <element signature="method#copyDocument#0;class#Main#0" />
+            <element signature="method#copyFolder#0;class#Main#0" />
+            <element signature="method#moveDocument#0;class#Main#0" />
+            <element signature="method#moveFolder#0;class#Main#0" />
+            <element signature="method#renameDocument#0;class#Main#0" />
+            <element signature="method#renameFolder#0;class#Main#0" />
+            <element signature="method#cancelCheckOut#0;class#Main#0" />
+            <element signature="method#replaceFileRoute#0;class#Main#0" />
           </folding>
         </state>
       </provider>

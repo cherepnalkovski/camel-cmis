@@ -7,11 +7,17 @@ import org.apache.camel.ProducerTemplate;
 import org.apache.camel.impl.DefaultCamelContext;
 import org.apache.camel.impl.DefaultProducerTemplate;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+
 public class Main {
 
     public static void main(String[] args) throws Exception {
 
         CamelContext context = init();
+
+      //  createDocument(context);
 /*
         createFolder("Vladimir", context);
 
@@ -35,7 +41,15 @@ public class Main {
 
         // replace(context) - uploads new version of the file ?
 
+       // cancelCheckOut(context);
+
+     //   cancelCheckOut(context);
+
+    //    replaceFileRoute(context);
+
     }
+
+
 
     public static CamelContext init() throws Exception {
         CamelContext camelContext = new DefaultCamelContext();
@@ -48,10 +62,15 @@ public class Main {
         camelContext.addRoutes(new MoveFolderRoute());
         camelContext.addRoutes(new RenameDocumentRoute());
         camelContext.addRoutes(new RenameFolderRoute());
+        camelContext.addRoutes(new CancelCheckoutRoute());
+        camelContext.addRoutes(new CreateDocumentRoute());
+        camelContext.addRoutes(new CheckInRoute());
+        camelContext.addRoutes(new CheckOutRoute());
+        camelContext.addRoutes(new ReplaceFileRoute());
+
         camelContext.start();
 
         return camelContext;
-
     }
 
     public static void createFolder(String name, CamelContext camelContext) throws Exception {
@@ -60,10 +79,28 @@ public class Main {
 
         CreateFolderQueue createFolderQueue = new CreateFolderQueue(producerTemplate);
         Item item = new Item();
-        item.setFolderName(name);
-        item.setFolderPath("/User Homes/ann-acm");
+        item.setName(name);
+        item.setParentFolderPath("/User Homes/ann-acm");
         createFolderQueue.createFolder(item);
         System.out.println("FOLDER CREATED!!!!!");
+    }
+
+    public static void createDocument(CamelContext camelContext) throws Exception {
+        ProducerTemplate producerTemplate = new DefaultProducerTemplate(camelContext);
+        producerTemplate.start();
+
+        CreateDocumentQueue createDocumentQueue = new CreateDocumentQueue(producerTemplate);
+
+        File initialFile = new File("src/main/resources/application.properties");
+        InputStream inputStream = new FileInputStream(initialFile);
+
+        Item item = new Item();
+        item.setName(initialFile.getName());
+        item.setParentFolderPath("/User Homes/ann-acm");
+        item.setInputStream(inputStream);
+        item.setMimeType("text/plain");
+
+        createDocumentQueue.createDocument(item);
     }
 
     public static void deleteFolder(CamelContext camelContext) throws Exception {
@@ -73,7 +110,7 @@ public class Main {
         DeleteFolderQueue deleteFolderQueue = new DeleteFolderQueue(producerTemplate);
 
         Item deleteFolder = new Item();
-        deleteFolder.setFolderPath("/User Homes/ann-acm/VladimirReflection");
+        deleteFolder.setObjectId("");
 
         deleteFolderQueue.deleteFolder(deleteFolder);
         System.out.println("FOLDER DELETED!!!!!");
@@ -85,7 +122,7 @@ public class Main {
 
         DeleteDocumentQueue deleteDocumentQueue = new DeleteDocumentQueue(producerTemplate);
         Item document = new Item();
-        document.setFolderPath("/User Homes/ann-acm/Documents/Test.xlsx");
+        document.setObjectId("");
 
         deleteDocumentQueue.deleteDocument(document);
         System.out.println("DOCUMENT DELETED!!!!!");
@@ -97,8 +134,8 @@ public class Main {
 
         CopyDocumentQueue copyDocumentQueue = new CopyDocumentQueue(producerTemplate);
         Item copyItem = new Item();
-        copyItem.setDestinationPath("/User Homes/ann-acm/TestRenamed");
-        copyItem.setDocumentPath("/User Homes/ann-acm/Vladimir/Test.xlsx");
+        copyItem.setObjectId("");
+        copyItem.setDestinationFolderId("");
 
         copyDocumentQueue.copyDocument(copyItem);
 
@@ -110,8 +147,8 @@ public class Main {
 
         CopyFolderQueue copyFolderQueue = new CopyFolderQueue(producerTemplate);
         Item item = new Item();
-        item.setDestinationPath("/User Homes/ann-acm/Move");
-        item.setFolderPath("/User Homes/ann-acm/Vladimir");
+        item.setObjectId("");
+        item.setDestinationFolderId("");
 
         copyFolderQueue.copyFolder(item);
     }
@@ -122,9 +159,9 @@ public class Main {
 
         MoveDocumentQueue moveDocumentQueue = new MoveDocumentQueue(producerTemplate);
         Item item = new Item();
-        item.setDestinationPath("/User Homes/ann-acm/Vladimir");
-        item.setFolderPath("/User Homes/ann-acm/");
-        item.setDocumentPath("/User Homes/ann-acm/TestRenamed.xlsx");
+        item.setObjectId("");
+        item.setSourceFolderId("");
+        item.setDestinationFolderId("");
 
         moveDocumentQueue.moveDocument(item);
     }
@@ -135,8 +172,8 @@ public class Main {
 
         MoveFolderQueue moveFolderQueue = new MoveFolderQueue(producerTemplate);
         Item item = new Item();
-        item.setDestinationPath("/User Homes/ann-acm/Remove");
-        item.setFolderPath("/User Homes/ann-acm/Move");
+        item.setObjectId("");
+        item.setDestinationFolderId("");
 
         moveFolderQueue.moveFolder(item);
     }
@@ -147,8 +184,8 @@ public class Main {
 
         RenameDocumentQueue renameDocumentQueue = new RenameDocumentQueue(producerTemplate);
         Item item = new Item();
-        item.setFileName("TestAgain");
-        item.setDocumentPath("/User Homes/ann-acm/TestRenamed1.xlsx");
+        item.setObjectId("");
+        item.setName("");
 
         renameDocumentQueue.renameDocument(item);
     }
@@ -159,9 +196,42 @@ public class Main {
 
         RenameFolderQueue renameFolderQueue = new RenameFolderQueue(producerTemplate);
         Item item = new Item();
-        item.setFolderName("TestRenamed");
-        item.setFolderPath("/User Homes/ann-acm/Test");
+        item.setObjectId("");
+        item.setName("");
 
         renameFolderQueue.renameFolder(item);
+    }
+
+    private static void cancelCheckOut(CamelContext camelContext) throws Exception
+    {
+        ProducerTemplate producerTemplate = new DefaultProducerTemplate(camelContext);
+        producerTemplate.start();
+
+        CancelCheckoutQueue cancelCheckoutQueue = new CancelCheckoutQueue(producerTemplate);
+
+        Item item = new Item();
+        item.setObjectId("");
+
+        cancelCheckoutQueue.cancelCheckout(item);
+    }
+
+    public static void replaceFileRoute(CamelContext camelContext) throws Exception
+    {
+        ProducerTemplate producerTemplate = new DefaultProducerTemplate(camelContext);
+        producerTemplate.start();
+
+        ReplaceFileQueue replaceFileQueue = new ReplaceFileQueue(producerTemplate);
+
+        File file = new File("src/main/resources/application.properties");
+        InputStream inputStream = new FileInputStream(file);
+
+        Item item = new Item();
+        item.setObjectId("49c9dbcd-4b60-4f7b-bb32-aa8ed4ea7304");
+        item.setName("REPLACED");
+        item.setMimeType("text/plain");
+        item.setInputStream(inputStream);
+        item.setCheckInComment("Replaced file");
+
+        replaceFileQueue.replaceFile(item);
     }
 }

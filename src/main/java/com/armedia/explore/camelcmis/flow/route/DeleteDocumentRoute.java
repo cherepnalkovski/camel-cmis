@@ -14,7 +14,7 @@ public class DeleteDocumentRoute extends RouteBuilder
         from("seda:deleteDocumentQueue").setExchangePattern(ExchangePattern.InOut)
                 .process(exchange -> {
                     exchange.getIn().getHeaders().put(PropertyIds.OBJECT_TYPE_ID, "cmis:document");
-                    exchange.getIn().getHeaders().put(CamelCMISConstants.CMIS_DOCUMENT_PATH, ((Item) exchange.getIn().getBody()).getFolderPath());
+                    exchange.getIn().getHeaders().put(PropertyIds.OBJECT_ID, ((Item) exchange.getIn().getBody()).getObjectId());
                     exchange.getIn().getHeaders().put(CamelCMISConstants.CMIS_ACTION, CamelCMISActions.DELETE_DOCUMENT);
                 })
                 .to("arkcase-cmis://https://acm-arkcase/alfresco/api/-default-/public/cmis/versions/1.1/atom?username=admin&password=admin&remoteUser=ann-acm");

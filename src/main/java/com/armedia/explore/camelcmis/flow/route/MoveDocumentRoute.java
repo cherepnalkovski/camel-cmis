@@ -14,9 +14,9 @@ public class MoveDocumentRoute extends RouteBuilder
         from("seda:moveDocumentQueue").setExchangePattern(ExchangePattern.InOut)
                 .process(exchange -> {
                     exchange.getIn().getHeaders().put(PropertyIds.OBJECT_TYPE_ID, "cmis:document");
-                    exchange.getIn().getHeaders().put(CamelCMISConstants.CMIS_DESTIONATION_FOLDER_PATH, ((Item) exchange.getIn().getBody()).getDestinationPath());
-                    exchange.getIn().getHeaders().put(CamelCMISConstants.CMIS_DOCUMENT_PATH, ((Item) exchange.getIn().getBody()).getDocumentPath());
-                    exchange.getIn().getHeaders().put(CamelCMISConstants.CMIS_FOLDER_PATH, ((Item) exchange.getIn().getBody()).getFolderPath());
+                    exchange.getIn().getHeaders().put(CamelCMISConstants.CMIS_OBJECT_ID, ((Item) exchange.getIn().getBody()).getObjectId());
+                    exchange.getIn().getHeaders().put(CamelCMISConstants.CMIS_SOURCE_FOLDER_ID, ((Item) exchange.getIn().getBody()).getSourceFolderId());
+                    exchange.getIn().getHeaders().put(CamelCMISConstants.CMIS_DESTIONATION_FOLDER_ID, ((Item) exchange.getIn().getBody()).getDestinationFolderId());
                     exchange.getIn().getHeaders().put(CamelCMISConstants.CMIS_ACTION, CamelCMISActions.MOVE_DOCUMENT);
                 })
                 .to("arkcase-cmis://https://acm-arkcase/alfresco/api/-default-/public/cmis/versions/1.1/atom?username=admin&password=admin&remoteUser=ann-acm");
