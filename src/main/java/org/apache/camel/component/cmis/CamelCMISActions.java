@@ -16,10 +16,8 @@ public enum CamelCMISActions
             { public String getMethodName() { return "copyDocument"; }},
     COPY_FOLDER
             { public String getMethodName() { return "copyFolder"; }},
-    RENAME_DOCUMENT
-            { public String getMethodName() { return "renameDocument"; }},
-    RENAME_FOLDER
-            { public String getMethodName() { return "renameFolder"; }},
+    RENAME
+            { public String getMethodName() { return "rename"; }},
     CHECK_IN
             { public String getMethodName() { return "checkIn"; }},
     CHECK_OUT
