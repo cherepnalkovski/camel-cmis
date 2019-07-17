@@ -17,6 +17,7 @@ public class CheckInRoute extends RouteBuilder
                     exchange.getIn().getHeaders().put(PropertyIds.NAME, ((Item) exchange.getIn().getBody()).getName());
                     exchange.getIn().getHeaders().put(PropertyIds.CONTENT_STREAM_MIME_TYPE, ((Item) exchange.getIn().getBody()).getMimeType());
                     exchange.getIn().getHeaders().put(PropertyIds.CHECKIN_COMMENT,((Item) exchange.getIn().getBody()).getCheckInComment());
+                    exchange.getIn().getHeaders().put(CamelCMISConstants.CMIS_OBJECT_ID,((Item) exchange.getIn().getBody()).getObjectId());
                     exchange.getIn().getHeaders().put(CamelCMISConstants.CMIS_ACTION, CamelCMISActions.CHECK_IN);
 
                     Item item = (Item) exchange.getIn().getBody();

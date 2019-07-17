@@ -2,7 +2,6 @@ package org.apache.camel.component.cmis;
 
 public enum CamelCMISActions
 {
-    // TODO : CheckIn, ChekcOut  (Document)
     CREATE
             { public String getMethodName() { return "createNode"; }},
     DELETE_DOCUMENT

@@ -17,35 +17,31 @@ public class Main {
 
         CamelContext context = init();
 
-      //  createDocument(context);
-/*
-        createFolder("Vladimir", context);
+    //    createDocument(context);
 
-        createFolder("Test", context);*/
+        createFolder("Vladimir1", context);
+
+    //    createFolder("Test", context);
 
     //    deleteDocument(context);
 
     //    deleteFolder(context);
 
-    //    copyDocument(context);
+     //   copyDocument(context);
 
-     //   copyFolder(context); // tested with sub folders and files
+    //    copyFolder(context); // tested with sub folders and files
 
-    //    moveDocument(context);
+   //     moveDocument(context);
 
-    //   moveFolder(context);  // create copy than delete
+    //    moveFolder(context);  // create copy than delete
 
     //    renameDocument(context);  // Full name with extension
 
     //    renameFolder(context);
 
-        // replace(context) - uploads new version of the file ?
+    //    cancelCheckOut(context);
 
-       // cancelCheckOut(context);
-
-     //   cancelCheckOut(context);
-
-    //    replaceFileRoute(context);
+     //   replaceFileRoute(context);
 
     }
 
@@ -79,8 +75,8 @@ public class Main {
 
         CreateFolderQueue createFolderQueue = new CreateFolderQueue(producerTemplate);
         Item item = new Item();
+        item.setObjectId("14576e13-d2fc-42ec-97ba-a2940de953f7");
         item.setName(name);
-        item.setParentFolderPath("/User Homes/ann-acm");
         createFolderQueue.createFolder(item);
         System.out.println("FOLDER CREATED!!!!!");
     }
@@ -110,7 +106,7 @@ public class Main {
         DeleteFolderQueue deleteFolderQueue = new DeleteFolderQueue(producerTemplate);
 
         Item deleteFolder = new Item();
-        deleteFolder.setObjectId("");
+        deleteFolder.setObjectId("357462a6-87c7-4ea4-bb20-d5b2f4a64ad0");
 
         deleteFolderQueue.deleteFolder(deleteFolder);
         System.out.println("FOLDER DELETED!!!!!");
@@ -122,7 +118,7 @@ public class Main {
 
         DeleteDocumentQueue deleteDocumentQueue = new DeleteDocumentQueue(producerTemplate);
         Item document = new Item();
-        document.setObjectId("");
+        document.setObjectId("5587c258-6afe-4a09-81d2-cf4fd2573cf8");
 
         deleteDocumentQueue.deleteDocument(document);
         System.out.println("DOCUMENT DELETED!!!!!");
@@ -134,8 +130,8 @@ public class Main {
 
         CopyDocumentQueue copyDocumentQueue = new CopyDocumentQueue(producerTemplate);
         Item copyItem = new Item();
-        copyItem.setObjectId("");
-        copyItem.setDestinationFolderId("");
+        copyItem.setObjectId("49c9dbcd-4b60-4f7b-bb32-aa8ed4ea7304");
+        copyItem.setDestinationFolderId("06d42c97-5f0e-4661-a68f-b7e47d64bb90");
 
         copyDocumentQueue.copyDocument(copyItem);
 
@@ -147,8 +143,8 @@ public class Main {
 
         CopyFolderQueue copyFolderQueue = new CopyFolderQueue(producerTemplate);
         Item item = new Item();
-        item.setObjectId("");
-        item.setDestinationFolderId("");
+        item.setObjectId("14576e13-d2fc-42ec-97ba-a2940de953f7");
+        item.setDestinationFolderId("ec7d75f5-0c89-4f8b-9b39-d5446e36c4d2");
 
         copyFolderQueue.copyFolder(item);
     }
@@ -159,9 +155,9 @@ public class Main {
 
         MoveDocumentQueue moveDocumentQueue = new MoveDocumentQueue(producerTemplate);
         Item item = new Item();
-        item.setObjectId("");
-        item.setSourceFolderId("");
-        item.setDestinationFolderId("");
+        item.setObjectId("49c9dbcd-4b60-4f7b-bb32-aa8ed4ea7304");
+        item.setSourceFolderId("0b3fd943-0411-49b9-be40-f6c3689dd083");
+        item.setDestinationFolderId("ec7d75f5-0c89-4f8b-9b39-d5446e36c4d2");
 
         moveDocumentQueue.moveDocument(item);
     }
@@ -172,8 +168,8 @@ public class Main {
 
         MoveFolderQueue moveFolderQueue = new MoveFolderQueue(producerTemplate);
         Item item = new Item();
-        item.setObjectId("");
-        item.setDestinationFolderId("");
+        item.setObjectId("14576e13-d2fc-42ec-97ba-a2940de953f7");
+        item.setDestinationFolderId("ec7d75f5-0c89-4f8b-9b39-d5446e36c4d2");
 
         moveFolderQueue.moveFolder(item);
     }
@@ -184,8 +180,8 @@ public class Main {
 
         RenameDocumentQueue renameDocumentQueue = new RenameDocumentQueue(producerTemplate);
         Item item = new Item();
-        item.setObjectId("");
-        item.setName("");
+        item.setObjectId("49c9dbcd-4b60-4f7b-bb32-aa8ed4ea7304");
+        item.setName("LastRename");
 
         renameDocumentQueue.renameDocument(item);
     }
@@ -196,8 +192,8 @@ public class Main {
 
         RenameFolderQueue renameFolderQueue = new RenameFolderQueue(producerTemplate);
         Item item = new Item();
-        item.setObjectId("");
-        item.setName("");
+        item.setObjectId("14576e13-d2fc-42ec-97ba-a2940de953f7");
+        item.setName("LastFolderRenamed");
 
         renameFolderQueue.renameFolder(item);
     }

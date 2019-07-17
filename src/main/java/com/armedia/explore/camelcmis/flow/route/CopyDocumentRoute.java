@@ -14,7 +14,7 @@ public class CopyDocumentRoute extends RouteBuilder
         from("seda:copyDocumentQueue").setExchangePattern(ExchangePattern.InOut)
                 .process(exchange -> {
                     exchange.getIn().getHeaders().put(PropertyIds.OBJECT_TYPE_ID, "cmis:document");
-                    exchange.getIn().getHeaders().put(PropertyIds.OBJECT_ID, ((Item) exchange.getIn().getBody()).getObjectId());
+                    exchange.getIn().getHeaders().put(CamelCMISConstants.CMIS_OBJECT_ID, ((Item) exchange.getIn().getBody()).getObjectId());
                     exchange.getIn().getHeaders().put(CamelCMISConstants.CMIS_DESTIONATION_FOLDER_ID, ((Item) exchange.getIn().getBody()).getDestinationFolderId());
                     exchange.getIn().getHeaders().put(CamelCMISConstants.CMIS_ACTION, CamelCMISActions.COPY_DOCUMENT);
                 })
